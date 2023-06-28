@@ -5,11 +5,12 @@ hour=0
 while [ $minute -le 60 ]
 do
 	if [ $minute -eq 60 ];then
+		if [ $hour -gt 12 ];then
+			break
+		fi
 		echo "Hour: $hour"
 		minute=0
 		hour=$((hour+1))
-	elif [ $hour -gt 12 ];then
-		break
 	else
 		echo "$minute"
 	fi
