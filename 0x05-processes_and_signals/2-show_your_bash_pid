@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script displays lines containing the bash word based on the previous exercise.
+# shellcheck disable=SC2009
+ps -auxf | grep bash
