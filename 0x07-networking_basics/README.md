@@ -45,7 +45,6 @@ This project is about networking basics. We will learn about OSI model, LAN, WAN
 	- Is a number that network devices use to connect to networks
 
 - [3-UDP_and_TCP](./3-UDP_and_TCP): Text file answering the following questions:
-![.](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/3d92e3c4a470f8ecf4c73db511fcbbadaa002e1c.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230705T111836Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=f6dfedbaa09ebeff638ff20ce4ef3a4e90f8aad6b4e68b5ae6254c30b314bfc6)
   - Which statement is correct for the TCP box:
 	- It is a protocol that is transferring data in a slow way but surely
 	- It is a protocol that is transferring data in a fast way and might loss
