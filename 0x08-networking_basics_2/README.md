@@ -9,3 +9,5 @@ This project is about networking basics. We will learn about localhost, hosts fi
   - facebook.com resolves to `8.8.8.8`
 
 - [1-show_attached_IPs](./1-show_attached_IPs) - Script that displays all active IPv4 IPs on the machine it’s executed on.
+
+- [100-port_listening_on_localhost](./100-port_listening_on_localhost) - Bash script that listens on port `98` on `localhost`.
