@@ -4,7 +4,7 @@ This project is about networking basics. We will learn about localhost, hosts fi
 
 ## Files
 
-- [0-change_your_home_I](./0-change_your_home_IP) - Script that configures an Ubuntu server with localhost as IP:
+- [0-change_your_home_IP](./0-change_your_home_IP) - Script that configures an Ubuntu server with localhost as IP:
   - localhost resolves to `127.0.0.2`
   - facebook.com resolves to `8.8.8.8`
 
