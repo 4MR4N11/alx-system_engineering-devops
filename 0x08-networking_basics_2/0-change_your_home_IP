@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script configures an Ubuntu server with this requirements: localhost resolves to 127.0.0.2 and facebook.com resolves to 8.8.8.8.
+new_localhost_ip="127.0.0.2"
+new_facebook_ip="8.8.8.8"
+if [ -z "$(grep "localhost" /etc/hosts | cut -d: -f1)" ];then
+	if [ -s /etc/hosts ];then
+		sed -i "1s/^/$new_localhost_ip       localhost\n/" /etc/hosts
+	else
+		echo "$new_localhost_ip       localhost" > "/etc/hosts"
+	fi
+else
+	linenum=$(grep -n "localhost" /etc/hosts | cut -d: -f1 | head -n 1)
+	sed -i "${linenum}s/.*/$new_localhost_ip       localhost/" /etc/hosts
+fi
+if [ -z "$(grep "facebook" /etc/hosts | cut -d: -f1)" ];then
+	sed -i "1s/^/$new_facebook_ip       facebook\n/" /etc/hosts
+else
+	linenum=$(grep -n "facebook" /etc/hosts | cut -d: -f1)
+	sed -i "${linenum}s/.*/$new_facebook_ip       facebook/" /etc/hosts
+fi
