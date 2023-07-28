@@ -6,7 +6,7 @@ This project is about web infrastructure design and the different components tha
 
 ### [0-simple_web_stack](./0-simple_web_stack)
 
-A [!link](https://github.com/4MR4N11/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/images/0-simple_web_stack.png) to a diagram of a simple web stack that includes:
+A [link](https://github.com/4MR4N11/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/images/0-simple_web_stack.png) to a diagram of a simple web stack that includes:
 - 1 server
 - 1 web server (Nginx)
 - 1 application server
