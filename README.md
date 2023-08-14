@@ -2,7 +2,7 @@
 
 ## About
 
-- This repository consists of all the projects done with [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course.
+- This repository consists of all the System Engineering and DevOps projects done with [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course.
 
 ---
 
@@ -15,3 +15,4 @@
 - [0x06](./0x06-regular_expressions) : Regular expressions.
 - [0x07](./0x07-networking_basics) : Networking basics #0.
 - [0x08](./0x08-networking_basics_2) : Networking basics #1.
+- [0x09](./0x09-web_infrastructure_design): Web infrastructure design.
