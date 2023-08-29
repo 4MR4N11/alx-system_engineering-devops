@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Install nginx web server
+apt-get -y update
+apt-get -y install nginx
+sudo chown -R ubuntu /var/www
+echo "Hello World" > /var/www/html/index.html
+sudo /etc/init.d/nginx restart
