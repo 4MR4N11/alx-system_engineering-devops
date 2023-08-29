@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Install nginx web server and configure it to redirect to another page
+
+line="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+apt-get -y update
+apt-get -y install nginx
+chown -R ubuntu /var/www
+sed -i "53i $line" /etc/nginx/sites-available/default
+/etc/init.d/nginx restart

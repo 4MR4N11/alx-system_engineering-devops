@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+apt-get -y update
+apt-get -y install nginx
+chown -R ubuntu /var/www
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+line="\\\terror_page 404 /404.html;\n\tlocation = /var/www/html/404.html {\n\t\tinternal;\n\t}"
+sed -i "47i $line" /etc/nginx/sites-available/default
+/etc/init.d/nginx restart
