@@ -19,5 +19,4 @@ filepath="/etc/haproxy/haproxy.cfg"
 
 echo "ENABLED=1" >> /etc/default/haproxy
 
-service enable haproxy
-service restart haproxy
+service haproxy restart
