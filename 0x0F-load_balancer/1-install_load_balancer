@@ -13,10 +13,10 @@ filepath="/etc/haproxy/haproxy.cfg"
 	echo "backend back-http"
 	echo "    mode http"
 	echo "    balance roundrobin"
-	echo "    server 275834-web-01:80"
-	echo "    server 275834-web-02:80"
+	echo "    server 275834-web-01 34.227.89.39:80"
+	echo "    server 275834-web-02 35.174.184.2:80"
 } >> $filepath
 
 echo "ENABLED=1" >> /etc/default/haproxy
-
 service haproxy restart
+haproxy -f /etc/haproxy/haproxy.cfg
