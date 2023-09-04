@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# This script is used to install haproxy and configure it to load balance between two web servers
+apt-get -y update
+apt-get -y install haproxy
+
+filepath="/etc/haproxy/haproxy.cfg"
+{
+	echo "frontend front-http"
+	echo "    bind *:80"
+	echo "    mode http"
+	echo "    default_backend back-http"
+
+	echo "backend back-http"
+	echo "    mode http"
+	echo "    balance roundrobin"
+	echo "    server 275834-web-01:80"
+	echo "    server 275834-web-02:80"
+} >> $filepath
+
+echo "ENABLED=1" >> /etc/default/haproxy
+
+service enable haproxy
+service restart haproxy
