@@ -1,12 +1,10 @@
 # This puppet manifest installs nginx and adds a custom header to the nginx.conf file
-package { 'update':
-  name   => 'update',
-  ensure => 'latest',
+exec { 'update':
+  command => '/bin/apt-get update',
 }
 
 package { 'nginx':
   ensure => 'installed',
-  require => Package['update'],
 }
 
 $headername = "X-Served-By"
