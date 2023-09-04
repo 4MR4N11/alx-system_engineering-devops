@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script is used to install nginx and add a custom http response header
+apt-get -y update
+apt-get -y install nginx
+headername="X-Served-By"
+headervalue="$(hostname)"
+line="\\\tadd_header $headername \"$headervalue\";"
+sed -i "49i $line" /etc/nginx/nginx.conf
+service nginx restart
