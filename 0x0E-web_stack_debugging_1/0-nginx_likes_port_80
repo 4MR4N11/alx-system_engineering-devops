@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # configure nginx to listen on port 88
-apt-get update
-apt install -y nginx
-sed -ie "s/8080/80/g" /etc/nginx/sites-enabled/default
+sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
+sed -i "23i \\\tlisten 0.0.0.0:80;" /etc/nginx/sites-enabled/default
 service nginx restart
