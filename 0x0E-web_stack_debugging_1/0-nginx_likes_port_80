@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # configure nginx to listen on port 88
-sed 's/8080 default_server/80 default_server/g' /etc/nginx/sites-enabled/default > /etc/nginx/sites-enabled/default.tmp
-cp /etc/nginx/sites-enabled/default.tmp /etc/nginx/sites-enabled/default
-rm /etc/nginx/sites-enabled/default.tmp
+sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
 service nginx restart
