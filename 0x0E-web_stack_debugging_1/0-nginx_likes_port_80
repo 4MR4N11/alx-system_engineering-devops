@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # configure nginx to listen on port 88
-sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
-sed -i "s/ipv6only=on//" /etc/nginx/sites-enabled/default
-sed -i "23i \\\tlisten 0.0.0.0:80;" /etc/nginx/sites-enabled/default
-service nginx restart
+sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
+sudo sed -i "s/ipv6only=on//" /etc/nginx/sites-enabled/default
+sudo service nginx restart
