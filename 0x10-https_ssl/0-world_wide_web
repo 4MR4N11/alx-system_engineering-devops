@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script will get the subdomains of a domain and print them out
+# Usage: ./0-world_wide_web <domain> <subdomain>
+
+get_subdomains() {
+	domain="$1"
+	subdomain="$2"
+	subdomains=("www" "lb-01" "web-01" "web-02")
+	if [ "$subdomain" ]; then
+		ip=$(dig "$subdomain.$domain" | awk '/^;; ANSWER SECTION:$/ { getline; print $5 }')
+		echo "The subdomain $subdomain is a A record and points to $ip"
+	else
+		for sub in "${subdomains[@]}"; do
+			ip=$(dig "$sub.$domain" | awk '/^;; ANSWER SECTION:$/ { getline; print $5 }')
+			echo "The subdomain $sub is a A record and points to $ip"
+		done
+	fi
+}
+
+get_subdomains "$1" "$2"
