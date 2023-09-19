@@ -7,12 +7,9 @@ fi
 mysql_root_password="$1"
 backup_date=$(date +'%d-%m-%Y')
 mysql_dump_file="backup.sql"
-archive_file="${backup_date}.tar.gz"
+archive_file="$backup_date.tar.gz"
 echo "Creating MySQL dump..."
-if ! mysqldump -u root -p"${mysql_root_password}" --all-databases > "${mysql_dump_file}"; then
-    echo "MySQL dump failed. Check your MySQL root password and try again."
-    exit 1
-fi
+mysqldump -u root --password="$mysql_root_password" --all-databases > "$mysql_dump_file"
 echo "Creating compressed archive..."
-tar -czvf "${archive_file}" "${mysql_dump_file}"
-echo "Backup completed. Archive saved as ${archive_file}"
+tar -czvf "$archive_file" "$mysql_dump_file"
+echo "Backup completed. Archive saved as $archive_file"
