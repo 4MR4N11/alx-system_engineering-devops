@@ -30,7 +30,7 @@ def gatherData(employeeID):
     except (Exception):
         print("An error occured")
         return 0
-    
+
 
 if __name__ == "__main__":
     """ Only executes as main"""
