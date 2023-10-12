@@ -1,10 +1,12 @@
 #  set up client SSH configuration file
-file { '~/.ssh/config':
-  ensure => present,
-  content => "
-  Host 34.227.89.39
-    IdentityFile ~/.ssh/school
-    PreferredAuthentications publickey
-    PasswordAuthentication no
-  ",
+file_line { 'Turn off passwd auth':
+  path  => '/etc/ssh/sshd_config',
+  line  => 'PasswordAuthentication no',
+  match => '^PasswordAuthentication.*',
+}
+
+file_line { 'Declare identity file':
+  path  => '~/.ssh/config',
+  line  => "IdentityFile ~/.ssh/school",
+  match => '^IdentityFile.*',
 }
